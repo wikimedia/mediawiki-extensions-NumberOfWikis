@@ -52,8 +52,7 @@ function wfNumberOfWikisAssignValue( &$parser, &$cache, &$magicWordId, &$ret ) {
 			$ret = $data;
 		} else {
 			// Not cached → have to fetch it from the database
-			global $wgSharedDB;
-			$dbr = wfGetDB( DB_SLAVE, array(), $wgSharedDB );
+			$dbr = wfGetDB( DB_SLAVE );
 			$res = $dbr->select(
 				'wiki_list',
 				'COUNT(*) AS count',
