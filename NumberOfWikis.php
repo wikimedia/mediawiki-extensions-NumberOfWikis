@@ -4,8 +4,8 @@
  *
  * @file
  * @ingroup Extensions
- * @version 0.1
- * @date November 6, 2010
+ * @version 0.2
+ * @date March 3, 2011
  * @author Jack Phoenix <jack@shoutwiki.com>
  * @license http://en.wikipedia.org/wiki/Public_domain Public domain
  */
@@ -17,7 +17,7 @@ if( !defined( 'MEDIAWIKI' ) ) {
 // Extension credits that will show up on Special:Version
 $wgExtensionCredits['variable'][] = array(
 	'name' => 'Number of wikis',
-	'version' => '0.1',
+	'version' => '0.2',
 	'author' => 'Jack Phoenix',
 	'description' => 'Adds <nowiki>{{NUMBEROFWIKIS}}</nowiki> magic word to show the number of wikis on ShoutWiki',
 );
@@ -57,7 +57,7 @@ function wfNumberOfWikisAssignValue( &$parser, &$cache, &$magicWordId, &$ret ) {
 			$res = $dbr->select(
 				'wiki_list',
 				'COUNT(*) AS count',
-				array(),
+				array( 'wl_deleted' => 0 ), // ignore deleted wikis as per Jedimca0
 				__METHOD__
 			);
 			wfDebugLog( 'NumberOfWikis', 'Got the amount of wikis from DB' );
