@@ -13,6 +13,11 @@ $magicWords['en'] = array(
 	'numberofwikis' => array( 0, 'NUMBEROFWIKIS' ),
 );
 
+/** German (Deutsch) */
+$magicWords['de'] = array(
+	'numberofwikis' => array( 0, 'ANZAHLDERWIKIS' ),
+);
+
 /** Finnish (Suomi) */
 $magicWords['fi'] = array(
 	'numberofwikis' => array( 0, 'WIKIENLUKUMÄÄRÄ' ),
