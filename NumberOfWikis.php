@@ -17,23 +17,14 @@ if( !defined( 'MEDIAWIKI' ) ) {
 // Extension credits that will show up on Special:Version
 $wgExtensionCredits['variable'][] = array(
 	'name' => 'Number of wikis',
-	'version' => '0.2',
+	'version' => '0.3',
 	'author' => 'Jack Phoenix',
 	'description' => 'Adds <nowiki>{{NUMBEROFWIKIS}}</nowiki> magic word to show the number of wikis on ShoutWiki',
 );
 
 // Translations for {{NUMBEROFWIKIS}}
 $dir = dirname( __FILE__ ) . '/';
-$wgExtensionMessagesFiles['NumberOfWikis'] = $dir . 'NumberOfWikis.i18n.magic.php';
-
-$wgHooks['LanguageGetMagic'][] = 'wfNumberOfWikisMagicWord';
-function wfNumberOfWikisMagicWord( &$magicWords, $langID ) {
-	// tell MediaWiki that {{NUMBEROFWIKIS}} and all case variants found in
-	// wiki text should be mapped to magic ID 'NUMBEROFWIKIS'
-	// (0 means case-insensitive)
-	$magicWords['NUMBEROFWIKIS'] = array( 0, 'NUMBEROFWIKIS' );
-	return true;
-}
+$wgExtensionMessagesFiles['NumberOfWikisMagic'] = $dir . 'NumberOfWikis.i18n.magic.php';
 
 $wgHooks['ParserGetVariableValueSwitch'][] = 'wfNumberOfWikisAssignValue';
 function wfNumberOfWikisAssignValue( &$parser, &$cache, &$magicWordId, &$ret ) {

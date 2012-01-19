@@ -10,40 +10,40 @@ $magicWords = array();
 
 /** English (English) */
 $magicWords['en'] = array(
-	'numberofwikis' => array( 0, 'NUMBEROFWIKIS' ),
+	'NUMBEROFWIKIS' => array( 0, 'NUMBEROFWIKIS' ),
 );
 
 /** German (Deutsch) */
 $magicWords['de'] = array(
-	'numberofwikis' => array( 0, 'ANZAHLDERWIKIS' ),
+	'NUMBEROFWIKIS' => array( 0, 'ANZAHLDERWIKIS' ),
 );
 
 /** Finnish (Suomi) */
 $magicWords['fi'] = array(
-	'numberofwikis' => array( 0, 'WIKIENLUKUMÄÄRÄ' ),
+	'NUMBEROFWIKIS' => array( 0, 'WIKIENLUKUMÄÄRÄ' ),
 );
 
 /** French (Français) */
 $magicWords['fr'] = array(
-	'numberofwikis' => array( 0, 'NOMBREWIKIS' ),
+	'NUMBEROFWIKIS' => array( 0, 'NOMBREWIKIS' ),
 );
 
 /** Dutch (Nederlands) */
 $magicWords['nl'] = array(
-	'numberofwikis' => array( 0, 'AANTALWIKIS' ),
+	'NUMBEROFWIKIS' => array( 0, 'AANTALWIKIS' ),
 );
 
 /** Polish (Polski) */
 $magicWords['pl'] = array(
-	'numberofwikis' => array( 0, 'LICZBAWIKI' ),
+	'NUMBEROFWIKIS' => array( 0, 'LICZBAWIKI' ),
 );
 
 /** Portuguese (Português) */
 $magicWords['pt'] = array(
-	'numberofwikis' => array( 0, 'NUMERODEWIKIS' ),
+	'NUMBEROFWIKIS' => array( 0, 'NUMERODEWIKIS' ),
 );
 
 /** Swedish (Svenska) */
 $magicWords['sv'] = array(
-	'numberofwikis' => array( 0, 'ANTALWIKIS' ),
+	'NUMBEROFWIKIS' => array( 0, 'ANTALWIKIS' ),
 );
