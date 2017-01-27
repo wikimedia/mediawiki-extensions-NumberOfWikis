@@ -5,8 +5,13 @@
 		"Jack Phoenix"
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:NumberOfWikis",
-	"description": "Adds <nowiki>{{NUMBEROFWIKIS}}</nowiki> magic word to show the number of wikis on ShoutWiki",
+	"descriptionmsg": "numberofwikis-desc",
 	"type": "variable",
+	"MessagesDirs": {
+		"NumberOfWikis": [
+			"i18n"
+		]
+	},
 	"ExtensionMessagesFiles": {
 		"NumberOfWikisMagic": "NumberOfWikis.i18n.magic.php"
 	},
