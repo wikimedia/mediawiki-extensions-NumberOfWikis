@@ -27,7 +27,7 @@ class NumberOfWikis {
 				$ret = $data;
 			} else {
 				// Not cached → have to fetch it from the database
-				$dbr = wfGetDB( DB_SLAVE );
+				$dbr = wfGetDB( DB_REPLICA );
 				$res = $dbr->select(
 					'wiki_list',
 					'COUNT(*) AS count',
