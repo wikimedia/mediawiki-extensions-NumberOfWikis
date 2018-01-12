@@ -15,7 +15,7 @@ class NumberOfWikis {
 		global $wgMemc;
 
 		if ( $magicWordId == 'NUMBEROFWIKIS' ) {
-			$key = wfMemcKey( 'shoutwiki', 'numberofwikis' );
+			$key = $wgMemc->makeKey( 'shoutwiki', 'numberofwikis' );
 			$data = $wgMemc->get( $key );
 			if ( $data != '' ) {
 				// We have it in cache? Oh goody, let's just use the cached value!
