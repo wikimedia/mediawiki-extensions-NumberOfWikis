@@ -19,12 +19,8 @@
 		"NumberOfWikis": "NumberOfWikis.class.php"
 	},
 	"Hooks": {
-		"ParserGetVariableValueSwitch": [
-			"NumberOfWikis::assignValue"
-		],
-		"MagicWordwgVariableIDs": [
-			"NumberOfWikis::variableIds"
-		]
+		"ParserGetVariableValueSwitch": "NumberOfWikis::assignValue",
+		"MagicWordwgVariableIDs": "NumberOfWikis::variableIds"
 	},
 	"manifest_version": 1
 }
