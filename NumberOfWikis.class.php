@@ -11,7 +11,7 @@
 
 class NumberOfWikis {
 
-	public static function assignValue( &$parser, &$cache, &$magicWordId, &$ret ) {
+	public static function assignValue( $parser, &$cache, $magicWordId, &$ret ) {
 		global $wgMemc;
 
 		if ( $magicWordId == 'NUMBEROFWIKIS' ) {
@@ -24,7 +24,7 @@ class NumberOfWikis {
 					'Got the amount of wikis from memcached'
 				);
 				// return value
-				$ret = $data;
+				$ret = $cache[$magicWordId] = $data;
 			} else {
 				// Not cached → have to fetch it from the database
 				$dbr = wfGetDB( DB_REPLICA );
@@ -40,7 +40,7 @@ class NumberOfWikis {
 					// (86400 = seconds in a day)
 					$wgMemc->set( $key, $row->count, 86400 );
 					// ...and return the value to the user
-					$ret = $row->count;
+					$ret = $cache[$magicWordId] = $row->count;
 				}
 			}
 		}
