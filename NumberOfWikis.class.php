@@ -4,19 +4,21 @@
  *
  * @file
  * @ingroup Extensions
- * @date 22 November 2015
+ * @date 13 April 2020
  * @author Jack Phoenix <jack@shoutwiki.com>
  * @license https://en.wikipedia.org/wiki/Public_domain Public domain
  */
 
+use MediaWiki\MediaWikiServices;
+
 class NumberOfWikis {
 
 	public static function assignValue( $parser, &$cache, $magicWordId, &$ret ) {
-		global $wgMemc;
-
 		if ( $magicWordId == 'NUMBEROFWIKIS' ) {
-			$key = $wgMemc->makeKey( 'shoutwiki', 'numberofwikis' );
-			$data = $wgMemc->get( $key );
+			$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+			$key = $cache->makeKey( 'shoutwiki', 'numberofwikis' );
+			$data = $cache->get( $key );
+
 			if ( $data != '' ) {
 				// We have it in cache? Oh goody, let's just use the cached value!
 				wfDebugLog(
@@ -31,14 +33,16 @@ class NumberOfWikis {
 				$res = $dbr->select(
 					'wiki_list',
 					'COUNT(*) AS count',
-					array( 'wl_deleted' => 0 ), // ignore deleted wikis as per Jedimca0
+					[ 'wl_deleted' => 0 ], // ignore deleted wikis as per Jedimca0
 					__METHOD__
 				);
+
 				wfDebugLog( 'NumberOfWikis', 'Got the amount of wikis from DB' );
+
 				foreach ( $res as $row ) {
 					// Store the count in cache...
 					// (86400 = seconds in a day)
-					$wgMemc->set( $key, $row->count, 86400 );
+					$cache->set( $key, $row->count, 86400 );
 					// ...and return the value to the user
 					$ret = $cache[$magicWordId] = $row->count;
 				}
