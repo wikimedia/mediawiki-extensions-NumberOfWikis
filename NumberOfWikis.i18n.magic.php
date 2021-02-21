@@ -43,6 +43,16 @@ $magicWords['pt'] = [
 	'NUMBEROFWIKIS' => [ 0, 'NUMERODEWIKIS' ],
 ];
 
+/** Serbian Cyrillic (српски (ћирилица)) */
+$magicWords['sr-ec'] = [
+	'NUMBEROFWIKIS' => [ 0, 'БРОЈВИКИЈА' ],
+];
+
+/** Serbian Latin (srpski (latinica)) */
+$magicWords['sr-el'] = [
+	'NUMBEROFWIKIS' => [ 0, 'BROJVIKIJA' ],
+];
+
 /** Swedish (Svenska) */
 $magicWords['sv'] = [
 	'NUMBEROFWIKIS' => [ 0, 'ANTALWIKIS' ],
