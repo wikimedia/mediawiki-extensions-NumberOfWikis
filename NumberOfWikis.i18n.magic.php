@@ -6,44 +6,44 @@
  * @ingroup Extensions
  */
 
-$magicWords = array();
+$magicWords = [];
 
 /** English (English) */
-$magicWords['en'] = array(
-	'NUMBEROFWIKIS' => array( 0, 'NUMBEROFWIKIS' ),
-);
+$magicWords['en'] = [
+	'NUMBEROFWIKIS' => [ 0, 'NUMBEROFWIKIS' ],
+];
 
 /** German (Deutsch) */
-$magicWords['de'] = array(
-	'NUMBEROFWIKIS' => array( 0, 'ANZAHLDERWIKIS' ),
-);
+$magicWords['de'] = [
+	'NUMBEROFWIKIS' => [ 0, 'ANZAHLDERWIKIS' ],
+];
 
 /** Finnish (Suomi) */
-$magicWords['fi'] = array(
-	'NUMBEROFWIKIS' => array( 0, 'WIKIENLUKUMÄÄRÄ' ),
-);
+$magicWords['fi'] = [
+	'NUMBEROFWIKIS' => [ 0, 'WIKIENLUKUMÄÄRÄ' ],
+];
 
 /** French (Français) */
-$magicWords['fr'] = array(
-	'NUMBEROFWIKIS' => array( 0, 'NOMBREWIKIS' ),
-);
+$magicWords['fr'] = [
+	'NUMBEROFWIKIS' => [ 0, 'NOMBREWIKIS' ],
+];
 
 /** Dutch (Nederlands) */
-$magicWords['nl'] = array(
-	'NUMBEROFWIKIS' => array( 0, 'AANTALWIKIS' ),
-);
+$magicWords['nl'] = [
+	'NUMBEROFWIKIS' => [ 0, 'AANTALWIKIS' ],
+];
 
 /** Polish (Polski) */
-$magicWords['pl'] = array(
-	'NUMBEROFWIKIS' => array( 0, 'LICZBAWIKI' ),
-);
+$magicWords['pl'] = [
+	'NUMBEROFWIKIS' => [ 0, 'LICZBAWIKI' ],
+];
 
 /** Portuguese (Português) */
-$magicWords['pt'] = array(
-	'NUMBEROFWIKIS' => array( 0, 'NUMERODEWIKIS' ),
-);
+$magicWords['pt'] = [
+	'NUMBEROFWIKIS' => [ 0, 'NUMERODEWIKIS' ],
+];
 
 /** Swedish (Svenska) */
-$magicWords['sv'] = array(
-	'NUMBEROFWIKIS' => array( 0, 'ANTALWIKIS' ),
-);
+$magicWords['sv'] = [
+	'NUMBEROFWIKIS' => [ 0, 'ANTALWIKIS' ],
+];

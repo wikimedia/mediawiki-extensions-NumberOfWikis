@@ -19,7 +19,7 @@
 		"NumberOfWikisMagic": "NumberOfWikis.i18n.magic.php"
 	},
 	"AutoloadClasses": {
-		"NumberOfWikis": "NumberOfWikis.class.php"
+		"NumberOfWikis": "src/NumberOfWikis.php"
 	},
 	"Hooks": {
 		"ParserGetVariableValueSwitch": "NumberOfWikis::assignValue",

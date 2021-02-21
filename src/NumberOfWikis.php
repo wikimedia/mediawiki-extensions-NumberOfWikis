@@ -13,6 +13,14 @@ use MediaWiki\MediaWikiServices;
 
 class NumberOfWikis {
 
+	/**
+	 * @param Parser $parser
+	 * @param WANObjectCache &$cache
+	 * @param string $magicWordId
+	 * @param string &$ret
+	 *
+	 * @return bool
+	 */
 	public static function assignValue( $parser, &$cache, $magicWordId, &$ret ) {
 		if ( $magicWordId == 'NUMBEROFWIKIS' ) {
 			$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
@@ -33,7 +41,8 @@ class NumberOfWikis {
 				$res = $dbr->select(
 					'wiki_list',
 					'COUNT(*) AS count',
-					[ 'wl_deleted' => 0 ], // ignore deleted wikis as per Jedimca0
+					// ignore deleted wikis as per Jedimca0
+					[ 'wl_deleted' => 0 ],
 					__METHOD__
 				);
 
@@ -52,6 +61,12 @@ class NumberOfWikis {
 		return true;
 	}
 
+	/**
+	 * Register the magic word ID.
+	 *
+	 * @param array &$variableIds
+	 * @return bool
+	 */
 	public static function variableIds( &$variableIds ) {
 		$variableIds[] = 'NUMBEROFWIKIS';
 		return true;
