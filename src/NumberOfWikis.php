@@ -15,13 +15,13 @@ class NumberOfWikis {
 
 	/**
 	 * @param Parser $parser
-	 * @param WANObjectCache &$cache
+	 * @param array &$variableCache UNUSED in MW 1.35+
 	 * @param string $magicWordId
 	 * @param string &$ret
 	 *
 	 * @return bool
 	 */
-	public static function assignValue( $parser, &$cache, $magicWordId, &$ret ) {
+	public static function assignValue( $parser, &$variableCache, $magicWordId, &$ret ) {
 		if ( $magicWordId == 'NUMBEROFWIKIS' ) {
 			$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 			$key = $cache->makeKey( 'shoutwiki', 'numberofwikis' );
@@ -34,7 +34,7 @@ class NumberOfWikis {
 					'Got the amount of wikis from memcached'
 				);
 				// return value
-				$ret = $cache[$magicWordId] = $data;
+				$ret = $variableCache[$magicWordId] = $data;
 			} else {
 				// Not cached → have to fetch it from the database
 				$dbr = wfGetDB( DB_REPLICA );
@@ -53,7 +53,7 @@ class NumberOfWikis {
 					// (86400 = seconds in a day)
 					$cache->set( $key, $row->count, 86400 );
 					// ...and return the value to the user
-					$ret = $cache[$magicWordId] = $row->count;
+					$ret = $variableCache[$magicWordId] = $row->count;
 				}
 			}
 		}
