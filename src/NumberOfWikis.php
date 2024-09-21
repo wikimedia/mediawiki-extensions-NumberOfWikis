@@ -37,7 +37,7 @@ class NumberOfWikis {
 				$ret = $variableCache[$magicWordId] = $data;
 			} else {
 				// Not cached → have to fetch it from the database
-				$dbr = wfGetDB( DB_REPLICA );
+				$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 				$res = $dbr->select(
 					'wiki_list',
 					'COUNT(*) AS count',
