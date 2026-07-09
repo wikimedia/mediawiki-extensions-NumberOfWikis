@@ -1,6 +1,6 @@
 {
 	"name": "Number of wikis",
-	"version": "0.5",
+	"version": "0.6",
 	"author": [
 		"Jack Phoenix"
 	],
@@ -8,7 +8,7 @@
 	"descriptionmsg": "numberofwikis-desc",
 	"type": "variable",
 	"requires": {
-		"MediaWiki": ">= 1.34.0"
+		"MediaWiki": ">= 1.43.0"
 	},
 	"MessagesDirs": {
 		"NumberOfWikis": [
@@ -23,7 +23,7 @@
 	},
 	"Hooks": {
 		"ParserGetVariableValueSwitch": "NumberOfWikis::assignValue",
-		"MagicWordwgVariableIDs": "NumberOfWikis::variableIds"
+		"GetMagicVariableIDs": "NumberOfWikis::variableIds"
 	},
 	"manifest_version": 1
 }

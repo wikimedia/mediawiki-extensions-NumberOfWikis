@@ -4,7 +4,7 @@
  *
  * @file
  * @ingroup Extensions
- * @date 13 April 2020
+ * @date 9 July 2026
  * @author Jack Phoenix <jack@shoutwiki.com>
  * @license https://en.wikipedia.org/wiki/Public_domain Public domain
  */
@@ -14,12 +14,13 @@ use MediaWiki\MediaWikiServices;
 class NumberOfWikis {
 
 	/**
-	 * @param Parser $parser
-	 * @param array &$variableCache UNUSED in MW 1.35+
-	 * @param string $magicWordId
-	 * @param string &$ret
+	 * Fetch the # of wikis, either from cache, or if uncached, from the DB.
+	 * Cache TTL is a whole day because this does not need to be 100% accurate 100% of the time.
 	 *
-	 * @return bool
+	 * @param MediaWiki\Parser\Parser $parser
+	 * @param array &$variableCache Allegedly UNUSED in MW 1.35+
+	 * @param string $magicWordId Magic word ID to check for because we only care about one particular ID
+	 * @param string &$ret The value we're returning (the # of wikis)
 	 */
 	public static function assignValue( $parser, &$variableCache, $magicWordId, &$ret ) {
 		if ( $magicWordId == 'NUMBEROFWIKIS' ) {
@@ -57,19 +58,15 @@ class NumberOfWikis {
 				}
 			}
 		}
-
-		return true;
 	}
 
 	/**
 	 * Register the magic word ID.
 	 *
 	 * @param array &$variableIds
-	 * @return bool
 	 */
 	public static function variableIds( &$variableIds ) {
 		$variableIds[] = 'NUMBEROFWIKIS';
-		return true;
 	}
 
 }
